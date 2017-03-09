@@ -1,0 +1,230 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+    </div>
+    <div class="center">私募牛人汇</div>
+    <div class="right"></div>
+  </div>
+</div>
+
+<div class="page page-vs-index tabbar-labels-fixed" data-page="vs-index">
+  <div class="toolbar tabbar tabbar-labels">
+    <script type="text/template" id="myToolBarTemplate">
+    <div class="toolbar-inner">
+      <a href="market.html" class="link" data-animate-pages="false">
+        <i class="iconfont icon-quote"></i>
+        <span class="tabbar-label">市场</span>
+      </a>
+      <a href="vs-index.html" class="link active" data-animate-pages="false">
+        <i class="iconfont icon-cup"></i>
+        <span class="tabbar-label">私募</span>
+      </a>
+      <a href="tc-index.html" class="link" data-animate-pages="false">
+        <i class="iconfont icon-cup"></i>
+        <span class="tabbar-label">腾讯</span>
+      </a>
+      <a href="my.html" class="authentication link" data-animate-pages="false">
+        <i class="iconfont icon-my"></i>
+        <span class="tabbar-label">我的</span>
+      </a>
+    </div>
+    </script>
+  </div>
+  <div class="page-content">
+    <div class="poster">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="#"><img src="img/smnrh-banner0.jpg"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="http://www.china-invs.cn/web001/wbtg/tencent/mobile/tencent_ykh.html" target="_parent" class="external"><img src="img/smnrh-banner1.jpg"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="http://www.china-invs.cn/web001/wbtg/tencent/mobile/tencent_zzt.html" target="_parent" class="external"><img src="img/smnrh-banner2.jpg"></a>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <div class="list-block vs-summary">
+      <ul class="row no-gutter">
+        <li class="col-25 vs-introduce"><a class="external" href="https://view.inews.qq.com/a/FIN2016091205099701?from=groupmessage&isappinstalled=1"><span>赛事公告</span></a></li>
+        <li class="col-25 vs-rule"><a href="vs-rule.html"><span>赛程赛制</span></a></li>
+        <li class="col-25 vs-note"><a class="external" href="http://img.qiween.com/ztzq/index.html?redirect=1"><span>私募报名</span></a></li>
+        <li class="col-25 vs-prize"><a href="vs-prize.html"><span>奖项设置</span></a></li>
+      </ul>
+    </div>
+
+    <div class="vs-rank">
+      <div class="rank-header">
+        <span class="vs-stage"><i class="iconfont icon-flag-triangle"></i>决赛排名</span>
+        <div class="rank-week">
+          <span class="range sm-range-final">
+            <span class="week-item-final"></span>
+            <i class="iconfont icon-triangle-down"></i>
+          </span>
+          <ul class="js-week-list-final js-hidden">
+            <i class="iconfont icon-triangle-up"></i>
+          </ul>
+        </div>
+        <div class="clearfix">
+          <div class="fr">
+            <span class="btn-income btn-income-final sm-btn-income btn-total-income-final on" type="TOTAL">总收益</span>
+            <span class="btn-income btn-income-final sm-btn-income btn-week-income-final" type="WEEK">周收益</span>
+            <span class="btn-income btn-income-final sm-btn-income btn-daily-income-final" type="DAY">日收益</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-header row">
+        <div class="rank col-15">排名</div>
+        <div class="user-nickname col-20">用户昵称</div>
+        <div class="yield col-45">收益率<span class="income-describe income-describe-final"></span></div>
+        <div class="follow col-20">操作</div>
+      </div>
+      <div class="list-block list-rank list-revenue-rank-js">
+        <ul>
+          <script type="text/template" id="vsFinalRankTemplate">
+          {{#each this.result.dataList}}
+            <li class="item-content">
+              <div class="item-inner">
+                <div class="item-title">{{revenueRank}}</div>
+                {{#js_compare "this.masked==1"}}
+                <div class="item-center"><a class="link-detail" href="user-detail.html?accountId={{accountId}}&userName={{userName}}">{{userName}}</a></div>
+                {{else}}
+                <div class="item-center no-mask"><a class="link-detail" href="user-detail.html?accountId={{accountId}}&userName={{userName}}">{{userName}}</a></div>
+                {{/js_compare}}
+                {{#if revenueRate>0}}
+                  <div class="item-balance"><span class="balance rise">+{{js "(this.revenueRate * 100).toFixed(2)"}}%</span></div>
+                {{else}}
+                  {{#js_compare "this.revenueRate==0"}}
+                  <div class="item-balance"><span class="balance balanced">0.00%</span></div>
+                  {{else}}
+                  <div class="item-balance"><span class="balance fall">{{js "(this.revenueRate * 100).toFixed(2)"}}%</span></div>
+                  {{/js_compare}}
+                {{/if}}
+                <div class="item-btn"><span class="btn-follow sm-btn-follow btn-follow10" id="{{accountId}}">订&nbsp;阅</span></div>
+              </div>
+            </li>
+          {{/each}}
+          <li class="js-show-more-final">
+            <a href="vs-rank.html" class="item-link item-content">
+              <div class="item-inner show-more-rank">
+                <div class="item-center">查看更多</div>
+              </div>
+            </a>
+          </li>
+          </script>
+        </ul>
+      </div>
+    </div>
+
+    <div class="vs-rank">
+      <div class="rank-header">
+        <span class="vs-stage"><i class="iconfont icon-flag-triangle"></i>初赛排名</span>
+        <div class="rank-week">
+          <span class="range sm-range">
+            <span class="week-item"></span>
+            <i class="iconfont icon-triangle-down"></i>
+          </span>
+          <ul class="js-week-list js-hidden">
+            <i class="iconfont icon-triangle-up"></i>
+          </ul>
+        </div>
+        <div class="clearfix">
+          <!-- <div class="fl update-time">数据更新：<span class="data-update-time"></span></div> -->
+          <div class="fr">
+            <span class="btn-income btn-income-first sm-btn-income btn-total-income on" type="TOTAL">总收益</span>
+            <span class="btn-income btn-income-first sm-btn-income btn-week-income" type="WEEK">周收益</span>
+            <span class="btn-income btn-income-first sm-btn-income btn-daily-income" type="DAY">日收益</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-header row">
+        <div class="rank col-15">排名</div>
+        <div class="user-nickname col-20">用户昵称</div>
+        <div class="yield col-45">收益率<span class="income-describe income-describe-first"></span></div>
+        <div class="follow col-20">操作</div>
+      </div>
+      <div class="list-block list-rank list-revenue-rank">
+        <ul>
+          <script type="text/template" id="vsRankTemplate">
+          {{#each this.result.dataList}}
+            <li class="item-content">
+              <div class="item-inner">
+                <div class="item-title">{{revenueRank}}</div>
+                {{#js_compare "this.masked==1"}}
+                <div class="item-center"><a class="link-detail" href="user-detail.html?accountId={{accountId}}&userName={{userName}}">{{userName}}</a></div>
+                {{else}}
+                <div class="item-center no-mask"><a class="link-detail" href="user-detail.html?accountId={{accountId}}&userName={{userName}}">{{userName}}</a></div>
+                {{/js_compare}}
+                {{#if revenueRate>0}}
+                  <div class="item-balance"><span class="balance rise">+{{js "(this.revenueRate * 100).toFixed(2)"}}%</span></div>
+                {{else}}
+                  {{#js_compare "this.revenueRate==0"}}
+                  <div class="item-balance"><span class="balance balanced">0.00%</span></div>
+                  {{else}}
+                  <div class="item-balance"><span class="balance fall">{{js "(this.revenueRate * 100).toFixed(2)"}}%</span></div>
+                  {{/js_compare}}
+                {{/if}}
+                <div class="item-btn"><span class="btn-follow sm-btn-follow btn-follow10" id="{{accountId}}">订&nbsp;阅</span></div>
+              </div>
+            </li>
+          {{/each}}
+          <li class="js-show-more">
+            <a href="vs-rank.html" class="item-link item-content">
+              <div class="item-inner show-more-rank">
+                <div class="item-center">查看更多</div>
+              </div>
+            </a>
+          </li>
+          </script>
+        </ul>
+      </div>
+    </div>
+
+    <div class="vs-rank">
+      <div class="rank-header">
+        <span class="vs-stage"><i class="iconfont icon-flag-triangle"></i>人气排行</span>
+        <div><span class="follow-num-txt">订阅人数</span></div>
+      </div>
+
+      <div class="list-header row">
+        <div class="rank col-15">排名</div>
+        <div class="user-nickname col-20">用户昵称</div>
+        <div class="yield col-45">订阅人数</div>
+        <div class="follow col-20">追踪交易</div>
+      </div>
+      <div class="list-block list-rank">
+        <ul>
+          <script type="text/template" id="vsUserRankTemplate">
+          {{#each this.result.dataList}}
+            <li class="item-content">
+              <div class="item-inner">
+                <div class="item-title">{{revenueRank}}</div>
+                {{#js_compare "this.masked==1"}}
+                <div class="item-center"><a class="link-detail" href="user-detail.html?accountId={{accountId}}&userName={{userName}}">{{userName}}</a></div>
+                {{else}}
+                <div class="item-center no-mask"><a class="link-detail" href="user-detail.html?accountId={{accountId}}&userName={{userName}}">{{userName}}</a></div>
+                {{/js_compare}}
+                <div class="item-balance">{{trackedCount}}</div>
+                <div class="item-btn"><span class="btn-follow sm-btn-follow btn-follow-user10" id="{{accountId}}">订&nbsp;阅</span></div>
+              </div>
+            </li>
+          {{/each}}
+          <li>
+            <a href="vs-rankUser.html?vstockZoneId=2" class="item-link item-content">
+              <div class="item-inner show-more-rank">
+                <div class="item-center">查看更多</div>
+              </div>
+            </a>
+          </li>
+          </script>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

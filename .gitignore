@@ -1,0 +1,22 @@
+# OS X
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Log
+*.log
+npm-debug.log*
+
+# Node.js
+node_modules/
+bower_components/
+npm-debug.log
+
+# IDE
+.idea/
+.vscode/
+
+# Config
+config.prod.js

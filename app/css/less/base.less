@@ -1,0 +1,99 @@
+body {
+  -webkit-user-select: none; // 禁止用户选择文本
+}
+
+.views {
+  overflow: hidden;
+}
+
+.fix-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  .preloader {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+.list-block input[type=time],
+.list-block input[type=number],
+.list-block input[type=search],
+.list-block input[type=text],
+.list-block input[type=password],
+.list-block input[type=email],
+.list-block input[type=tel],
+.list-block input[type=url],
+.list-block input[type=date],
+.list-block input[type=datetime-local],
+.list-block select,
+.list-block textarea {
+  font-size: 16px;
+  height: 50px;
+  color: #333;
+}
+
+.button.button-big {
+  font-size: 18px;
+}
+
+// 清除浮动
+.clearfix {
+  zoom: 1;
+  overflow: hidden;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:before {
+    clear: both;
+  }
+}
+
+// 浮动
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+
+.tc {
+  text-align: center;
+}
+
+.hidden {
+  font-size: 0 !important;
+  display: none !important;
+}
+
+.close-btn {
+  margin-left: 0 !important;
+}
+
+// 解决iOS浏览器中，事件委托 点击事件不生效的bug
+* {
+  cursor: pointer;
+}
+
+#version {
+  position: fixed;
+  left: 50%;
+  bottom: 50px;
+  z-index: 99;
+  transform: translateX(-50%);
+  color: #888;
+}
+
+.foot-logo{
+  background: url("../img/logo.png");
+  background-size: cover;
+  width: 100%;
+  background-repeat:no-repeat;
+  background-position: center 0;
+  background-position: 50% 50%;
+  -webkit-background-size:100%;
+  padding-top: 45%;
+}

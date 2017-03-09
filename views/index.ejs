@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="css/framework7.ios.min.css">
+  <% if (isDevMode) { %>
+    <link rel="stylesheet" href="css/app.css">
+  <% } else { %>
+    <link rel="stylesheet" href="build/<%= assetPath.css%>">
+  <% } %>
+  <script>
+    // Promise polyfill
+    if (!window.Promise) {
+      var script = document.createElement('script');
+      var head = document.getElementsByTagName('head')[0];
+      script.setAttribute('src', 'js/vendors/promise.min.js');
+      script.setAttribute('async', 'true');
+      head.appendChild(script);
+    }
+    version = '<%= version%>';
+  </script>
+</head>
+<body>
+  <div class="statusbar-overlay"></div>
+  <div class="views">
+    <div class="view view-main" id="mainView">
+      <div class="navbar navbar-hidden"></div>
+      <div class="pages navbar-through">
+        <div class="page no-navbar">
+          <div class="page-content">
+            <div class="fix-center">
+              <span class="preloader"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/vendors/framework7.custom.min.js"></script>
+  <script src="js/vendors/echarts.min.js"></script>
+  <script src="js/stock-chart.js"></script>
+  <% if (isDevMode) { %>
+    <script data-main="js/main" src="js/vendors/require.js"></script>
+  <% } else { %>
+    <script data-main="build/<%= assetPath.js%>" src="js/vendors/require.js"></script>
+  <% } %>
+  <script src="http://mat1.gtimg.com/finance/js/xdh/1.1.js"></script>
+</body>
+</html>

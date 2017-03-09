@@ -1,0 +1,142 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+    </div>
+    <div class="center">我的</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+
+<div class="page page-myIndex tabbar-labels-fixed" data-page="my">
+  <div class="toolbar tabbar tabbar-labels">
+    <script type="text/template" id="myToolBarTemplate">
+    <div class="toolbar-inner">
+      <a href="market.html" class="link" data-animate-pages="false">
+        <i class="iconfont icon-quote"></i>
+        <span class="tabbar-label">行情</span>
+      </a>
+      <a href="vs-index.html" class="link" data-animate-pages="false">
+        <i class="iconfont icon-cup"></i>
+        <span class="tabbar-label">私募</span>
+      </a>
+      <a href="tc-index.html" class="link" data-animate-pages="false">
+        <i class="iconfont icon-cup"></i>
+        <span class="tabbar-label">腾讯</span>
+      </a>
+      <a href="my.html" class="authentication link active" data-animate-pages="false">
+        <i class="iconfont icon-my"></i>
+        <span class="tabbar-label">我的</span>
+      </a>
+    </div>
+    </script>
+  </div>
+  <div class="page-content">
+  <div>
+    <script type="text/template" id="myTemplate">
+      <div class="list-block header">
+        <ul>
+          <li>
+            <a href="myprofile.html" class="item-link item-content">
+              <div class="item-inner">
+                <div><img class="avatar" src="img/avatar-default.png" id="myAvatar"></div>
+                <div class="name">
+                  <div class="nickname">{{this.userName}}</div>
+                  <div class="telephone">{{this.mobile}}</div>
+                </div>
+                <span class="iconfont icon-arrow-right"></span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="list-block assets hideElement">
+        <ul>
+          <li>
+            <a href="myassets.html" class="item-link item-content">
+              <div class="item-inner">
+                <div>
+                  <div>总资产</div>
+                  <div class="assets-amount tc">{{valueType result.totalAsset}}</div>
+                </div>
+                <span class="iconfont icon-arrow-right"></span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="list-block list-low my-portals">
+        <ul>
+          <li class="hideElement">
+            <a href="trade.html" class="item-link" data-animate-pages="false">
+              <div class="item-content">
+                <div class="item-media">
+                  <i class="iconfont icon-trade"></i>
+                </div>
+                <div class="item-inner">交易</div>
+              </div>
+            </a>
+          </li>
+          <li class="hideElement">
+            <a href="position.html" class="item-link">
+              <div class="item-content">
+                <div class="item-media">
+                  <i class="iconfont icon-position"></i>
+                </div>
+                <div class="item-inner">持仓</div>
+              </div>
+            </a>
+          </li>
+          <li class="hideElement">
+            <a href="withdraw.html" class="item-link">
+              <div class="item-content">
+                <div class="item-media">
+                  <i class="iconfont icon-withdraw"></i>
+                </div>
+                <div class="item-inner">撤单</div>
+              </div>
+            </a>
+          </li>
+          <li class="hideElement">
+            <a href="query.html" class="item-link">
+              <div class="item-content">
+                <div class="item-media">
+                  <i class="iconfont icon-query-bar"></i>
+                </div>
+                <div class="item-inner">查询</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="myfollow.html" class="item-link">
+              <div class="item-content">
+                <div class="item-media">
+                  <i class="iconfont icon-aim"></i>
+                </div>
+                <div class="item-inner">高手追踪</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="change-psd.html" class="item-link">
+              <div class="item-content">
+                <div class="item-media">
+                  <i class="iconfont icon-password-edit"></i>
+                </div>
+                <div class="item-inner">密码修改</div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </script>
+  </div>
+
+  </div>
+
+  <script type="text/template" id="versionTemplate">
+    <div id="version">VERSION: {{version}}</div>
+  </script>
+</div>

@@ -1,0 +1,116 @@
+
+.page-myIndex {
+  .list-block {
+    font-size: 15px;
+  }
+  .header {
+    margin-top: 0;
+    margin-bottom: 15px;
+    .item-inner {
+      height: 97px;
+      line-height: 97px;
+      padding-right: 15px;
+      background-image: none;
+    }
+    .avatar {
+      display: block;
+      width:68px; height:68px;
+      border-radius: 50%;
+    }
+    .name {
+      position: relative;
+      line-height: 24px;
+      width: 70%;
+    }
+    .nickname {
+      position: absolute;
+      left: 0;
+      top: -20px;
+      font-size: 18px;
+      color: #423b3f;
+    }
+    .telephone {
+      position: absolute;
+      left: 0;
+      top: 5px;
+      color: #9899a0;
+    }
+    .icon-arrow-right {
+      color: #0098e3;
+    }
+  }
+
+  .assets {
+    margin-top: 0;
+    margin-bottom: 15px;
+    .item-inner {
+      height: 90px;
+      padding-right: 15px;
+      background-image: none;
+    }
+    .assets-name {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .assets-amount {
+      font-size: 20px;
+      font-weight: bold;
+      color: @theme-color;
+    }
+    .icon-arrow-right {
+      color: #0098e3;
+    }
+
+  }
+
+  .my-portals {
+    ul {
+      overflow: hidden;
+      &:after {
+        height: 0;
+      }
+      li {
+        border-bottom: 1px solid #eaeaea;
+        border-left: 1px solid #eaeaea;
+        width: 50%;
+        float: left;
+        .item-media {
+          padding: 0;
+        }
+        .item-inner {
+          background-image: none;
+          font-size: 15px;
+          &:after {
+            background: none;
+          }
+        }
+        &:nth-child(odd) {
+          border-left: 0 none;
+        }
+        .iconfont {
+          font-size: 26px;
+          &.icon-trade {
+            color: #f96268;
+          }
+          &.icon-position {
+            color: #ffb359;
+          }
+          &.icon-withdraw {
+            color: #2eb3e8;
+          }
+          &.icon-query-bar {
+            color: #f76cb4;
+          }
+          &.icon-aim {
+            color: #ffb359;
+          }
+          &.icon-password-edit {
+            color: #fb6f54;
+          }
+        }
+      }
+    }
+  }
+}
+
+

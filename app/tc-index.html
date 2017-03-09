@@ -1,0 +1,221 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+    </div>
+    <div class="center">腾讯牛人汇</div>
+    <div class="right"></div>
+  </div>
+</div>
+
+<div class="page page-vs-index page-tc-index tabbar-labels-fixed" data-page="tc-index">
+  <div class="toolbar tabbar tabbar-labels">
+    <script type="text/template" id="tcToolBarTemplate">
+    <div class="toolbar-inner">
+      <a href="market.html" class="link" data-animate-pages="false">
+        <i class="iconfont icon-quote"></i>
+        <span class="tabbar-label">市场</span>
+      </a>
+      <a href="vs-index.html" class="link" data-animate-pages="false">
+        <i class="iconfont icon-cup"></i>
+        <span class="tabbar-label">私募</span>
+      </a>
+      <a href="tc-index.html" class="link active" data-animate-pages="false">
+        <i class="iconfont icon-cup"></i>
+        <span class="tabbar-label">腾讯</span>
+      </a>
+      <a href="my.html" class="authentication link" data-animate-pages="false">
+        <i class="iconfont icon-my"></i>
+        <span class="tabbar-label">我的</span>
+      </a>
+    </div>
+    </script>
+  </div>
+  <div class="page-content">
+    <div class="poster">
+      <div class="swiper-container">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href=""><img src="img/txnrh-banner0.png"></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="http://www.china-invs.cn/web001/wbtg/tencent/mobile/tencent_ykh.html" target="_parent" class="external"><img src="img/smnrh-banner1.jpg"></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="http://www.china-invs.cn/web001/wbtg/tencent/mobile/tencent_zzt.html" target="_parent" class="external"><img src="img/smnrh-banner2.jpg"></a>
+              </div>
+          </div>
+          <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <div class="tc-login-block">
+      <a class="btn login tc-index-login">
+        <i class="iconfont icon-home"></i>
+        <span>登录</span>
+      </a>
+      <a class="btn register" href="login-qq.html?isRegister=true">
+        <i class="iconfont icon-home"></i>
+        <span>报名</span>
+      </a>
+    </div>
+    <div class="tc-index-nav">
+      <div class="icon-block">
+        <a class="external" href="https://view.inews.qq.com/a/FIN2016101001640002">
+          <i class="iconfont icon-intro"></i>
+          <div class="name">赛事报道</div>
+        </a>
+      </div>
+      <div class="icon-block">
+        <a id="linkRevenueRank" href="">
+          <i class="iconfont icon-rank"></i>
+          <div class="name">收益排行</div>
+        </a>
+      </div>
+      <div class="icon-block">
+        <a href="vs-rankUser.html?vstockZoneId=3">
+          <i class="iconfont icon-intro"></i>
+          <div class="name">人气排行</div>
+        </a>
+      </div>
+      <div class="icon-block">
+        <a class="external goQQGroupBtn" href="#">
+          <i class="iconfont icon-intro"></i>
+          <div class="name">Q群争霸</div>
+        </a>
+      </div>
+      <div class="icon-block">
+        <a href="tc-intro.html">
+          <i class="iconfont icon-intro"></i>
+          <div class="name">大赛简介</div>
+        </a>
+      </div>
+      <div class="icon-block">
+        <a href="tc-rule.html">
+          <i class="iconfont icon-whistle"></i>
+          <div class="name">比赛规则</div>
+        </a>
+      </div>
+      <div class="icon-block">
+        <a href="tc-enroll-note.html">
+          <i class="iconfont icon-intro"></i>
+          <div class="name">报名须知</div>
+        </a>
+      </div>
+      <div class="icon-block">
+        <a href="tc-prize.html">
+          <i class="iconfont icon-prize"></i>
+          <div class="name">奖项设置</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="rank-content">
+      <div class="my-tab-block buttons-row">
+        <a href="#tab1" class="tab-link active button">收益排行</a>
+        <a href="#tab2" class="tab-link button">人气排行</a>
+      </div>
+
+      <div class="tabs my-tab-block">
+        <div class="my-tab tab active" id="tab1">
+          <div class="vs-rank">
+            <div class="rank-header">
+              <span class="vs-stage"><i class="iconfont icon-flag-triangle"></i>总排名</span>
+              <div class="rank-week">
+                <span class="range tc-range">
+                  <span class="week-item"></span>
+                  <i class="iconfont icon-triangle-down"></i>
+                </span>
+                <ul class="js-week-list js-hidden">
+                  <i class="iconfont icon-triangle-up"></i>
+                </ul>
+              </div>
+              <div class="clearfix">
+                <div class="fl">
+                  <span class="btn-income tc-btn-income tc-btn-total-income on" type="TOTAL">总收益</span>
+                  <span class="btn-income tc-btn-income tc-btn-week-income" type="WEEK">周收益</span>
+                  <span class="btn-income tc-btn-income tc-btn-daily-income" type="DAY">日收益</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="list-header row">
+              <div class="rank col-15">排名</div>
+              <div class="user-nickname col-20">用户昵称</div>
+              <div class="yield col-45">收益率<span class="income-describe"></span></div>
+              <div class="follow col-20">操作</div>
+            </div>
+            <div class="list-block list-rank list-revenue-rank">
+              <ul>
+                <script type="text/template" id="vsRankTemplate">
+                {{#each this.result.dataList}}
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">{{revenueRank}}</div>
+                      <div class="item-center"><a class="link-detail" href="user-detail.html?accountId={{accountId}}&userName={{userName}}">{{userName}}</a></div>
+                      {{#if revenueRate>0}}
+                        <div class="item-balance"><span class="balance rise">+{{js "(this.revenueRate * 100).toFixed(2)"}}%</span></div>
+                      {{else}}
+                        {{#js_compare "this.revenueRate==0"}}
+                        <div class="item-balance"><span class="balance balanced">0.00%</span></div>
+                        {{else}}
+                        <div class="item-balance"><span class="balance fall">{{js "(this.revenueRate * 100).toFixed(2)"}}%</span></div>
+                        {{/js_compare}}
+                      {{/if}}
+                      <div class="item-btn"><span class="btn-follow tc-btn-follow btn-follow10" id="{{accountId}}">订&nbsp;阅</span></div>
+                    </div>
+                  </li>
+                {{/each}}
+                <li class="js-show-more">
+                  <a href="vs-rank.html" class="item-link item-content">
+                    <div class="item-inner show-more-rank">
+                      <div class="item-center">查看更多</div>
+                    </div>
+                  </a>
+                </li>
+                </script>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="my-tab tab" id="tab2">
+          <div class="vs-rank">
+            <div class="rank-header">
+              <span class="vs-stage"><i class="iconfont icon-flag-triangle"></i>人气排行</span>
+              <div><span class="follow-num-txt">订阅人数</span></div>
+            </div>
+
+            <div class="list-header row">
+              <div class="rank col-15">排名</div>
+              <div class="user-nickname col-20">用户昵称</div>
+              <div class="yield col-45">订阅人数</div>
+              <div class="follow col-20">追踪交易</div>
+            </div>
+            <div class="list-block list-rank">
+              <ul>
+                <script type="text/template" id="vsUserRankTemplate">
+                {{#each this.result.dataList}}
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">{{revenueRank}}</div>
+                      <div class="item-center"><a class="link-detail" href="user-detail.html?accountId={{accountId}}&userName={{userName}}">{{userName}}</a></div>
+                      <div class="item-balance">{{trackedCount}}</div>
+                      <div class="item-btn"><span class="btn-follow tc-btn-follow btn-follow-user10" id="{{accountId}}">订&nbsp;阅</span></div>
+                    </div>
+                  </li>
+                {{/each}}
+                <li>
+                  <a href="vs-rankUser.html?vstockZoneId=3" class="item-link item-content">
+                    <div class="item-inner show-more-rank">
+                      <div class="item-center">查看更多</div>
+                    </div>
+                  </a>
+                </li>
+                </script>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
